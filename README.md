@@ -48,15 +48,41 @@ Dans notre modèle nous avons une classe : PNJ avec des comportement comme Pattr
 ```mermaid
 classDiagram
   class PNJ{
-    <<interface>>
-    attack(int attDmg)
+    <<abstract>>
+    -TypeAttque typeAttque
+    -String nom
+    -int PV
+    +PNJ(String nom, int PV)
+    +getTypeAttque() TypeAttque
+    +setTypeAttque(TypeAttque typeAttque)
+    +getNom() String
+    +setNom()
+    +getPV() int
+    +setPv()
+    +attaquer() String
+    +combat()*
   }
   class Patrick{
-    +attack(int attDmg) : String (on s'en fout de faire l'attck en vrai juste rend un truc fun)
+    +Patrick(String nom, int PV)
+    +combat()
   }
   class Bill{
-    +attack(int attDmg) : String (on s'en fout de faire l'attck en vrai juste rend un truc fun)
+    +Bill(String nom, int PV)
+    +combat()
   }
-  PNJ <|-- Patrick : implements
-  PNJ <|-- Bill : implements
+  class TypeAttque{
+    <<interface>>
+    +Arme() String
+  }
+  class DoubleHache{
+    +Arme() String
+  }
+  class EpeeCourte{
+    +Arme() String
+  }
+  PNJ <|-- Patrick : extend
+  PNJ <|-- Bill : extend
+  TypeAttque <|-- DoubleHache : implement
+  TypeAttque <|-- EpeeCourte : implement
+  PNJ o-- TypeAttque
 ```
