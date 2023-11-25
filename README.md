@@ -43,3 +43,20 @@ classDiagram
 ```
 
 ## Strategy
+Pour le design pattern de Strategy on est partie sur un système de manipulation de différentes des personnages dans un jeux
+Dans notre modèle nous avons une classe : PNJ avec des comportement comme Pattrick, Bill
+```mermaid
+classDiagram
+  class PNJ{
+    <<interface>>
+    attack(int attDmg)
+  }
+  class Patrick{
+    +attack(int attDmg) : String (on s'en fout de faire l'attck en vrai juste rend un truc fun)
+  }
+  class Bill{
+    +attack(int attDmg) : String (on s'en fout de faire l'attck en vrai juste rend un truc fun)
+  }
+  PNJ <|-- Patrick : implements
+  PNJ <|-- Bill : implements
+```
