@@ -84,5 +84,5 @@ classDiagram
   PNJ <|-- Bill : extend
   TypeAttque <|.. DoubleHache : implement
   TypeAttque <|.. EpeeCourte : implement
-  PNJ o-- TypeAttque
+  PNJ *-- TypeAttque
 ```
