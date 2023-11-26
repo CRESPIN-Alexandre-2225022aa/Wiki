@@ -82,7 +82,7 @@ classDiagram
   }
   PNJ <|-- Patrick : extend
   PNJ <|-- Bill : extend
-  TypeAttque <|-- DoubleHache : implement
-  TypeAttque <|-- EpeeCourte : implement
+  TypeAttque <|.. DoubleHache : implement
+  TypeAttque <|.. EpeeCourte : implement
   PNJ o-- TypeAttque
 ```
